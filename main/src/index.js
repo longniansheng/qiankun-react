@@ -15,6 +15,7 @@ render({ loading: true });
 
 const loader = (loading) => render({ loading });
 
+const isDev = process.env.NODE_ENV === "development";
 /**
  * Step2 注册子应用
  */
@@ -22,14 +23,14 @@ const loader = (loading) => render({ loading });
 registerMicroApps([
   {
     name: "react1",
-    entry: "//localhost:7100",
+    entry: isDev ? "//localhost:7100" : "/react1/index.html",
     container: "#subapp-viewport",
     loader,
     activeRule: "/react1",
   },
   {
     name: "react2",
-    entry: "//localhost:7101",
+    entry: isDev ? "//localhost:7101" : "/react2/index.html",
     container: "#subapp-viewport",
     loader,
     activeRule: "/react2",

@@ -1,21 +1,24 @@
-const { name } = require('./package');
+const { name } = require("./package");
+
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
-  webpack: config => {
+  webpack: (config) => {
     config.output.library = `${name}-[name]`;
-    config.output.libraryTarget = 'umd';
+    config.output.libraryTarget = "umd";
     config.output.jsonpFunction = `webpackJsonp_${name}`;
-    config.output.globalObject = 'window';
+    config.output.globalObject = "window";
+    config.output.publicPath = isDev ? "" : "/react2";
 
     return config;
   },
 
-  devServer: _ => {
+  devServer: (_) => {
     const config = {};
 
-    config.port = '7100';
+    config.port = "7100";
     config.headers = {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
     };
     config.historyApiFallback = true;
 
