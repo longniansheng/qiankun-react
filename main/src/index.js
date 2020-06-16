@@ -23,14 +23,14 @@ const isDev = process.env.NODE_ENV === "development";
 registerMicroApps([
   {
     name: "react1",
-    entry: isDev ? "//localhost:7100" : "/react1/index.html",
+    entry: isDev ? "//localhost:7100" : "/react1App/index.html",
     container: "#subapp-viewport",
     loader,
     activeRule: "/react1",
   },
   {
     name: "react2",
-    entry: isDev ? "//localhost:7101" : "/react2/index.html",
+    entry: isDev ? "//localhost:7101" : "/react2App/index.html",
     container: "#subapp-viewport",
     loader,
     activeRule: "/react2",

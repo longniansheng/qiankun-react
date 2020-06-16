@@ -10,9 +10,7 @@ function Render(props) {
 
   return (
     <>
-      <App />
-      {loading && <h4 className="subapp-loading">Loading...</h4>}
-      <div id="subapp-viewport" />
+      <App loading={loading} />
     </>
   );
 }

@@ -8,7 +8,7 @@ module.exports = {
     config.output.libraryTarget = "umd";
     config.output.jsonpFunction = `webpackJsonp_${name}`;
     config.output.globalObject = "window";
-    config.output.publicPath = isDev ? "" : "/react1";
+    config.output.publicPath = isDev ? "" : "/react1App";
 
     return config;
   },
