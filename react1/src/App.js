@@ -9,18 +9,18 @@ const About = () => <h1>React1 About Page</h1>;
 function App(props) {
   const [token, setToken] = useState("");
 
-  useEffect(() => {
-    props.onGlobalStateChange((state, prev) => {
-      if (state.token !== prev.token) {
-        setToken(state.token);
-      }
-    });
-  }, []);
-
   // useEffect(() => {
-  //   const state = props.store.getState();
-  //   setToken(state.token);
+  //   props.onGlobalStateChange((state, prev) => {
+  //     if (state.token !== prev.token) {
+  //       setToken(state.token);
+  //     }
+  //   });
   // }, []);
+
+  useEffect(() => {
+    const state = props.store.getState();
+    setToken(state.token);
+  }, []);
   return (
     <div className="App">
       <h1>当前登录账号:{token}</h1>
