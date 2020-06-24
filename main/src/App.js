@@ -1,8 +1,8 @@
 import React from "react";
 import { Provider } from "react-redux";
 import store from "./store";
-// import useLoginHooks from "./useLoginWithGlobalStateHooks";
-import useLoginHooks from "./useLoginWIthReduxHooks";
+import useLoginHooks from "./useLoginWithGlobalStateHooks";
+// import useLoginHooks from "./useLoginWithReduxHooks";
 
 function App(props) {
   const loading = props.loading;

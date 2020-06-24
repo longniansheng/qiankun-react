@@ -10,8 +10,10 @@ export default function useLoginHooks() {
   };
 
   useEffect(() => {
-    actions.onGlobalStateChange((state) => {
-      window.history.replaceState(undefined, undefined, "/react1");
+    actions.onGlobalStateChange((state, prev) => {
+      if (state.token !== prev.token) {
+        window.history.replaceState(undefined, undefined, "/react1");
+      }
     });
   }, []);
 
