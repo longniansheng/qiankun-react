@@ -1,5 +1,8 @@
 import React from "react";
-import useLoginHooks from "./useLoginHooks";
+import { Provider } from "react-redux";
+import store from "./store";
+// import useLoginHooks from "./useLoginWithGlobalStateHooks";
+import useLoginHooks from "./useLoginWIthReduxHooks";
 
 function App(props) {
   const loading = props.loading;
@@ -21,4 +24,11 @@ function App(props) {
   );
 }
 
-export default App;
+export default (props) => {
+  const loading = props.loading;
+  return (
+    <Provider store={store}>
+      <App loading={loading} />
+    </Provider>
+  );
+};

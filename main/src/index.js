@@ -4,6 +4,7 @@ import {
   setDefaultMountApp,
   start,
 } from "qiankun";
+import store from "./store";
 
 import render from "./ReactRender";
 // import render from './render/VueRender';
@@ -27,6 +28,7 @@ registerMicroApps([
     container: "#subapp-viewport",
     loader,
     activeRule: "/react1",
+    props: { store },
   },
   {
     name: "react2",
@@ -40,7 +42,7 @@ registerMicroApps([
 /**
  * Step3 设置默认进入的子应用
  */
-setDefaultMountApp("/react1");
+// setDefaultMountApp("/react1");
 
 /**
  * Step4 启动应用

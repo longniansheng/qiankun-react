@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 function render(props) {
-  const { container } = props;
+  const { container, ...rest } = props;
   ReactDOM.render(
-    <App />,
+    <App {...rest} />,
     container
       ? container.querySelector("#root")
       : document.querySelector("#root")
